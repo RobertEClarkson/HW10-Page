@@ -63,6 +63,9 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       checkAndUpdatePetInfoInHtml();
     }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////                          Added function for this assignment                                                                        ///////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     function clickedMathButton() {
 
       var inputs = document.querySelectorAll('input');
@@ -87,7 +90,7 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
           var addend1 = getNumber1();
           var addend2 = getNumber2();
           var sum = addend1 + addend2;
-          pet_info.comment = addend1 + ' + ' + addend2 + ' = ' + sum;
+          pet_info.comment = parseInt(addend1) + ' + ' + parseInt(addend2) + ' = ' + sum;
           checkAndUpdatePetInfoInHtml();
       }
 
@@ -99,6 +102,7 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
         return inputs[1].value;
       }
     }
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
     function clickedPlayButton() {
       if(pet_info.weight > 0) {
