@@ -89,8 +89,8 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       function updateLabel() {
           var addend1 = getNumber1();
           var addend2 = getNumber2();
-          var sum = addend1 + addend2;
-          pet_info.comment = parseInt(addend1) + ' + ' + parseInt(addend2) + ' = ' + sum;
+          var sum = parseInt(addend1) + parseInt(addend2);
+          pet_info.comment = addend1 + ' + ' + addend2 + ' = ' + sum;
           checkAndUpdatePetInfoInHtml();
       }
 
