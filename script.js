@@ -24,7 +24,10 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       toggleThoughtBubble();
     });
 
-  
+    $('.monkey-math').on("click", function(){
+      clickedMathButton();
+      toggleThoughtBubble();
+    });
     
   })
   
@@ -58,6 +61,43 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       }
 
       checkAndUpdatePetInfoInHtml();
+    }
+
+    function clickedMathButton() {
+
+      var inputs = document.querySelectorAll('input');
+
+      if (inputsAreEmpty()) {
+        pet_info.comment = "Number..?";
+        checkAndUpdatePetInfoInHtml();
+        return;
+      }
+
+      updateLabel();
+
+      function inputsAreEmpty() {
+        if (getNumber1() === '' || getNumber2() === '') {
+          return true;
+        } else {
+          return false;
+        }
+      }
+
+      function updateLabel() {
+          var addend1 = getNumber1();
+          var addend2 = getNumber2();
+          var sum = addend1 + addend2;
+          pet_info.comment = addend1 + ' + ' + addend2 + ' = ' + sum;
+          checkAndUpdatePetInfoInHtml();
+      }
+
+      function getNumber1() {
+        return inputs[0].value;
+      }
+
+      function getNumber2() {
+        return inputs[1].value;
+      }
     }
     
     function clickedPlayButton() {
